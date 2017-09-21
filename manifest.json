@@ -1,14 +1,17 @@
 {
   "manifest_version": 2,
 
-  "name": "Trello Carousel Slide",
-  "description": "This extension allows Trello to have a carousel effect.",
+  "name": "Trello Auto Scroll",
+  "description": "This extension allow your Trello scroll automatically until the last card and back to the first card as a loop.",
   "version": "1.0",
 
   "content_scripts": [
     {
       "matches": ["https://trello.com/*"],
-      "js": ["scripts/jquery-2.2.4.min.js", "scripts/script.js"]
+      "js": [
+        "scripts/jquery-2.2.4.min.js",
+        "scripts/script.js"
+      ]
     }
   ],
 
