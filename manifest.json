@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Trello Carousel Slide",
+  "description": "This extension allows Trello to have a carousel effect.",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://trello.com/*"],
+      "js": ["scripts/jquery-2.2.4.min.js", "scripts/script.js"]
+    }
+  ],
+
+  "icons": {
+    "128": "images/icon.png"
+  },
+
+  "browser_action": {
+    "default_icon": "images/icon.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
