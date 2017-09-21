@@ -3,7 +3,7 @@ var executeScroll = function() {
   // Get board variables.
   var $cards = $('.list-wrapper').not('.js-add-list'),
     cards = 0,
-    scrollTime = 1500,
+    scrollTime = 3500,
     animation = 800,
     margin = 10;
 
