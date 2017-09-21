@@ -1,0 +1,1 @@
+# trello-auto-scroll-horizontally
