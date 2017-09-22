@@ -65,7 +65,9 @@
         scrollTime: 3500,
         animationTime: 800
       }, function(items) {
+        // Load function.
         trelloAutoScroll(items);
+        // Stop interval.
         window.clearInterval(intervalListener);
       });
     }
