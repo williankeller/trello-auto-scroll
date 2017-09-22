@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, chrome) {
   "use strict";
 
   /**
@@ -31,7 +31,7 @@
     // Set interval as a loop to stop by each card.
     setInterval(function () {
       // While cards is more bigger then current scroll.
-      if ((cards >= leftPos) && ($board.scrollLeft() != scrollPrev)) {
+      if ((cards >= leftPos) && ($board.scrollLeft() !== scrollPrev)) {
         // Save previus scroll.
         scrollPrev = $board.scrollLeft();
 
@@ -42,7 +42,8 @@
         $board.animate({
           scrollLeft: leftPos
         }, animation);
-      } else {
+      }
+      else {
         // Animate to left.
         $board.animate({
           scrollLeft: 0
@@ -57,20 +58,22 @@
 
   /**
    * Interval to detect if Trello board is already loaded.
+   *
+   * @type Interval
    */
-  intervalListener = setInterval(function () {
+  var intervalListener = setInterval(function () {
     // Board loaded already?
     if ($('#board').length > 0) {
       chrome.storage.sync.get({
         scrollTime: 3500,
         animationTime: 800
-      }, function(items) {
+      }, function (items) {
         // Load function.
         trelloAutoScroll(items);
-        // Stop interval.
-        window.clearInterval(intervalListener);
       });
+      // Stop interval.
+      window.clearInterval(intervalListener);
     }
   }, 100);
 
-})(jQuery);
+})(jQuery, chrome);
