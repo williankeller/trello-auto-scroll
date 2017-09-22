@@ -15,6 +15,11 @@
     }
   ],
 
+  "options_ui": {
+    "page": "pages/options.html",
+    "chrome_style": false
+  },
+
   "icons": {
     "128": "images/icon.png"
   },

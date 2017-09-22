@@ -1,0 +1,30 @@
+.error {
+  color: red;
+  float: left;
+  font-weight: bold;
+  margin: 10px;
+}
+.success {
+  float: left;
+  color: green;
+  margin: 10px;
+}
+.main-container {
+  align-items: right;
+}
+.field {
+  margin: 20px 10px;
+  display: inline-block;
+}
+.field input {
+  margin-left: 8px;
+  margin-right: 4px;
+  width: 45px;
+}
+.suffix {
+  color: gray;
+}
+.btn {
+  float: right;
+  margin: 10px;
+}

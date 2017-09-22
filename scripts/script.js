@@ -1,10 +1,10 @@
 
-var executeScroll = function() {
+var executeScroll = function(items) {
   // Get board variables.
   var $cards = $('.list-wrapper').not('.js-add-list'),
     cards = 0,
-    scrollTime = 3500,
-    animation = 800,
+    scrollTime = items.scrollTime,
+    animation = items.animationTime,
     margin = 10;
 
   $cards.each(function () {
@@ -47,8 +47,13 @@ var executeScroll = function() {
 $('document').ready(function() {
   intervalListener = setInterval(function () {
     if ($('#board').length > 0) {
-      executeScroll();
-      window.clearInterval(intervalListener);
+      chrome.storage.sync.get({
+        scrollTime: 3500,
+        animationTime: 800
+      }, function(items) {
+        executeScroll(items);
+        window.clearInterval(intervalListener);
+      });
     }
   }, 200);
 });
