@@ -9,7 +9,7 @@
     {
       "matches": ["https://trello.com/*"],
       "js": [
-        "scripts/jquery-2.2.4.min.js",
+        "scripts/jquery-3.2.1.min.js",
         "scripts/script.js"
       ]
     }
