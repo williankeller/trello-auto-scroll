@@ -75,5 +75,4 @@
       window.clearInterval(intervalListener);
     }
   }, 100);
-
 })(jQuery, chrome);

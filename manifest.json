@@ -11,7 +11,8 @@
       "js": [
         "scripts/jquery-3.2.1.min.js",
         "scripts/script.js"
-      ]
+      ],
+      "run_at": "document_end"
     }
   ],
 
@@ -25,7 +26,8 @@
   },
 
   "browser_action": {
-    "default_icon": "images/icon.png"
+    "default_icon": "images/icon.png",
+    "default_title": "Trello Auto Scroll"
   },
 
   "permissions": [
