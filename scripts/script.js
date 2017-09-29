@@ -1,5 +1,5 @@
 (function ($, chrome) {
-  "use strict";
+  'use strict';
 
   /**
    * Scroll board to last card and back to the first one.
@@ -42,8 +42,7 @@
         $board.animate({
           scrollLeft: leftPos
         }, animation);
-      }
-      else {
+      } else {
         // Animate to left.
         $board.animate({
           scrollLeft: 0

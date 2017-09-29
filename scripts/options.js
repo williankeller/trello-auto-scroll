@@ -15,7 +15,7 @@ var optionsSave = function () {
   var scrollTimeValue = document.getElementById('scroll-time').value;
   var animationTimeValue = document.getElementById('animation-time').value;
 
-  if ((!scrollTimeValue) || (!animationTimeValue)) {
+  if ((! scrollTimeValue) || (! animationTimeValue)) {
     set_status('Please fill all items in the form', 'error');
     return false;
   }

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Trello Auto Scroll Options</title>
-  <link rel="stylesheet" href="../styles/options.css">
-</head>
+  <head>
+    <title>Trello Auto Scroll Options</title>
+    <link rel="stylesheet" href="../styles/options.css">
+  </head>
 
-<body>
-  <div class="main-container">
-    <div class="field">
-      <span class="prefix">Scroll Time</span><input type="textfield" id="scroll-time"><span class="suffix">ms</span>
+  <body>
+    <div class="main-container">
+      <div class="field">
+        <span class="prefix">Scroll Time</span><input type="textfield" id="scroll-time"><span class="suffix">ms</span>
+      </div>
+      <div class="field">
+        <span class="prefix">Animation Time</span><input type="textfield" id="animation-time"><span class="suffix">ms</span>
+      </div>
+      <div id="status"></div>
+      <button id="save" class="btn">Save</button>
     </div>
-    <div class="field">
-      <span class="prefix">Animation Time</span><input type="textfield" id="animation-time"><span class="suffix">ms</span>
-    </div>
-    <div id="status"></div>
-    <button id="save" class="btn">Save</button>
-  </div>
-  <script src="../scripts/options.js"></script>
-</body>
+    <script src="../scripts/options.js"></script>
+  </body>
 </html>
