@@ -18,7 +18,7 @@
 
   "options_ui": {
     "page": "pages/options.html",
-    "chrome_style": false
+    "chrome_style": true
   },
 
   "icons": {

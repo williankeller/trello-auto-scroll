@@ -7,14 +7,27 @@
 
   <body>
     <div class="main-container">
-      <div class="field">
-        <span class="prefix">Scroll Time</span><input type="textfield" id="scroll-time"><span class="suffix">ms</span>
+      <div  class="field">
+        <label>Scroll Time</label>
+        <input type="text" class="text" id="scroll-time"><span class="suffix">ms</span>
       </div>
       <div class="field">
-        <span class="prefix">Animation Time</span><input type="textfield" id="animation-time"><span class="suffix">ms</span>
+        <label>
+          <input type="checkbox" id="scroll-step-back"><span>Scroll Back in Steps</span>
+        </label>
       </div>
-      <div id="status"></div>
-      <button id="save" class="btn">Save</button>
+      <div class="field">
+        <label>Animation Time</label>
+        <input type="text" class="text" id="animation-time"><span class="suffix">ms</span>
+      </div>
+      <div class="field">
+        <div class="half">
+          <div id="status"></div>
+        </div>
+        <div class="half">
+          <button class="btn" id="save">Save</button>
+        </div>
+      </div>
     </div>
     <script src="../scripts/options.js"></script>
   </body>
