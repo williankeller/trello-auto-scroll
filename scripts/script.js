@@ -1,4 +1,4 @@
-(function ($, chrome) {
+(function ($, chrome, window) {
   'use strict';
 
   /**
@@ -13,9 +13,10 @@
     // Get board variables.
     var $board = $('#board'),
       $cards = $('.list-wrapper').not('.js-add-list'),
-      cards = 0,
       scrollTime = items.scrollTime,
+      scrollStepBack = items.scrollStepBack,
       animation = items.animationTime,
+      cards = 0,
       margin = 10;
 
     // Map all cards and get there width size.
@@ -26,12 +27,18 @@
     // Initial step is the same of all of the other steps.
     var leftPos = 0,
       scrollStep = (cards / $cards.length),
-      scrollPrev = margin;
+      scrollPrev = margin,
+      direction = 'right';
 
     // Set interval as a loop to stop by each card.
     setInterval(function () {
+      // Update direction when direction back to initial point.
+      if (leftPos === 0) {
+        direction = 'right';
+      }
+
       // While cards is more bigger then current scroll.
-      if ((cards >= leftPos) && ($board.scrollLeft() !== scrollPrev)) {
+      if ((cards >= leftPos) && ($board.scrollLeft() !== scrollPrev) && (direction === 'right')) {
         // Save previus scroll.
         scrollPrev = $board.scrollLeft();
 
@@ -42,14 +49,25 @@
         $board.animate({
           scrollLeft: leftPos
         }, animation);
-      } else {
+      }
+      // When all card was displayed.
+      else {
+        // Check if is needed to back in steps.
+        if (scrollStepBack) {
+          // Update direction to back to initial estate.
+          direction = 'left';
+          // Decrement left position in steps.
+          leftPos -= parseInt(scrollStep + margin);
+        }
+        // Set left position to initial point.
+        else {
+          leftPos = 0;
+        }
         // Animate to left.
         $board.animate({
-          scrollLeft: 0
+          scrollLeft: leftPos
         }, animation);
 
-        // Clear sroll.
-        leftPos = 0;
         scrollPrev = margin;
       }
     }, scrollTime);
@@ -63,8 +81,10 @@
   var intervalListener = setInterval(function () {
     // Board loaded already?
     if ($('#board').length > 0) {
+      // Get chrome data.
       chrome.storage.sync.get({
         scrollTime: 3500,
+        scrollStepBack: false,
         animationTime: 800
       }, function (items) {
         // Load function.
@@ -74,4 +94,4 @@
       window.clearInterval(intervalListener);
     }
   }, 100);
-})(jQuery, chrome);
+})(jQuery, chrome, window);
