@@ -1,0 +1,28 @@
+.trello-auto-scroll .main-container {
+  margin: 10px;
+  min-width: 280px;
+  text-align: center;
+}
+.trello-auto-scroll .button-area {
+  display: inline-block;
+}
+.trello-auto-scroll .button-area button {
+  color: #fff;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px 10px;
+}
+.trello-auto-scroll .button-area button:hover,
+.trello-auto-scroll .button-area button:active,
+.trello-auto-scroll .button-area button:focus {
+  cursor: pointer;
+  outline: none;
+}
+.trello-auto-scroll .start-scroll {
+  background-color: green;
+  border: 1px solid green;
+}
+.trello-auto-scroll .stop-scroll {
+  background-color: red;
+  border: 1px solid red;
+}
