@@ -1,16 +1,18 @@
 .trello-auto-scroll .main-container {
   margin: 10px;
-  min-width: 280px;
+  min-width: 150px;
   text-align: center;
 }
 .trello-auto-scroll .button-area {
-  display: inline-block;
+  display: block;
 }
 .trello-auto-scroll .button-area button {
-  color: #fff;
   border-radius: 3px;
-  margin: 10px;
-  padding: 5px 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 6px;
+  width: 100%;
 }
 .trello-auto-scroll .button-area button:hover,
 .trello-auto-scroll .button-area button:active,
@@ -19,10 +21,17 @@
   outline: none;
 }
 .trello-auto-scroll .start-scroll {
-  background-color: green;
-  border: 1px solid green;
+  background-color: #00C851;
+  border: 1px solid #007E33;
 }
 .trello-auto-scroll .stop-scroll {
-  background-color: red;
-  border: 1px solid red;
+  background-color: #FF4444;
+  border: 1px solid #CC0000;
+}
+.trello-auto-scroll .options-scroll {
+  background-color: #33b5e5;
+  border: 1px solid #0099CC;
+}
+.trello-auto-scroll .options-scroll:active {
+  background-color: #0099CC;
 }
