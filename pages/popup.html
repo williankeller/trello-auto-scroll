@@ -3,26 +3,23 @@
   <head>
     <title>Trello Auto Scroll Options</title>
     <link rel="stylesheet" href="../styles/popup.css">
-    <script src="../scripts/jquery-3.2.1.min.js"></script>
   </head>
-
   <body class="trello-auto-scroll">
     <div class="header">
-      <div class="title"><span>Trello Auto Scroll</span></div>
-      <div class="options">
-        <div role="button" title="Open settings" class="open-options">
-          <div class="img-settings button-right"></div>
-        </div>
+      <div class="title">
+        <span>Trello Auto Scroll</span>
+      </div>
+      <div role="button" title="Settings" class="open-options">
+        <div class="img-settings"></div>
       </div>
     </div>
     <div class="main-container">
       <div class="button-area">
-        <button class="start-scroll">Start scroll</button>
-      </div>
-      <div class="button-area">
-        <button class="stop-scroll">Stop scroll</button>
+        <button class="action-scroll">Start scroll</button>
       </div>
     </div>
+    <script src="../src/utils/selector.js"></script>
+    <script src="../src/utils/storage.js"></script>
     <script src="../scripts/popup.js"></script>
   </body>
 </html>

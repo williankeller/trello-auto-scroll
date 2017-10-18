@@ -1,24 +1,47 @@
 .main-container {
   margin: 0;
-  min-width: 220px;
+  min-width: 260px;
   text-align: center;
 }
 
+.header {
+  padding: 0 10px 10px;
+  height: 22px;
+}
+
+.title {
+  color: #000;
+  float: left;
+  opacity: .55;
+}
+
+.title span {
+  padding: 2px 0;
+  display: block;
+  font-size: 15px;
+}
+
 .img-settings {
-  background: transparent url('../icons/settings.svg') no-repeat center;
+  background: transparent url('../images/settings.svg') no-repeat center;
+  cursor: pointer;
+  float: right;
   height: 20px;
   opacity: .35;
   overflow: hidden;
   padding-right: 2px;
   width: 22px;
 }
+.img-settings:hover {
+  opacity: .8;
+}
 
 .button-area {
   display: inline-block;
-  width: 48%;
+  margin: 5px;
+  width: 50%;
 }
 
-.button-area button {
+.action-scroll {
   border: none;
   border-radius: 3px;
   color: #fff;
@@ -27,35 +50,28 @@
   font-size: .75rem;
   font-weight: 700;
   line-height: 22px;
-  margin: 5px;
+  margin: 0;
   padding: 4px 15px 3px;
   text-align: center;
-}
-
-.button-area button:hover,
-.button-area button:active,
-.button-area button:focus {
-  cursor: pointer;
-  outline: none;
-  transition: background .3s ease;
-}
-
-.start-scroll {
+  width: 100%;
   background: 100% #5AAC44;
   box-shadow: 0 2px 0 #519839;
 }
-.start-scroll:hover,
-.start-scroll:active,
-.start-scroll:focus {
+.action-scroll:hover,
+.action-scroll:active,
+.action-scroll:focus {
+  cursor: pointer;
+  outline: none;
+  transition: background .3s ease;
   background: 100% #519839;
 }
 
-.stop-scroll {
-  background: 100% #EB5A46;
-  box-shadow: 0 2px 0 #FF4444;
+.scrolling {
+  background: 100% #fd7461;
+  box-shadow: 0 2px 0 #ff5151;
 }
-.stop-scroll:hover,
-.stop-scroll:active,
-.stop-scroll:focus {
-  background: 100% #FF4444;
+.scrolling:hover,
+.scrolling:active,
+.scrolling:focus {
+  background: 100% #ff5151;
 }
