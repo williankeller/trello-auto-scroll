@@ -1,37 +1,61 @@
-.trello-auto-scroll .main-container {
-  margin: 10px;
-  min-width: 150px;
+.main-container {
+  margin: 0;
+  min-width: 220px;
   text-align: center;
 }
-.trello-auto-scroll .button-area {
-  display: block;
+
+.img-settings {
+  background: transparent url('../icons/settings.svg') no-repeat center;
+  height: 20px;
+  opacity: .35;
+  overflow: hidden;
+  padding-right: 2px;
+  width: 22px;
 }
-.trello-auto-scroll .button-area button {
+
+.button-area {
+  display: inline-block;
+  width: 48%;
+}
+
+.button-area button {
+  border: none;
   border-radius: 3px;
-  color: #FFFFFF;
-  font-size: 14px;
-  margin: 5px 0;
-  padding: 6px;
-  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 5px;
+  padding: 4px 15px 3px;
+  text-align: center;
 }
-.trello-auto-scroll .button-area button:hover,
-.trello-auto-scroll .button-area button:active,
-.trello-auto-scroll .button-area button:focus {
+
+.button-area button:hover,
+.button-area button:active,
+.button-area button:focus {
   cursor: pointer;
   outline: none;
+  transition: background .3s ease;
 }
-.trello-auto-scroll .start-scroll {
-  background-color: #00C851;
-  border: 1px solid #007E33;
+
+.start-scroll {
+  background: 100% #5AAC44;
+  box-shadow: 0 2px 0 #519839;
 }
-.trello-auto-scroll .stop-scroll {
-  background-color: #FF4444;
-  border: 1px solid #CC0000;
+.start-scroll:hover,
+.start-scroll:active,
+.start-scroll:focus {
+  background: 100% #519839;
 }
-.trello-auto-scroll .options-scroll {
-  background-color: #33b5e5;
-  border: 1px solid #0099CC;
+
+.stop-scroll {
+  background: 100% #EB5A46;
+  box-shadow: 0 2px 0 #FF4444;
 }
-.trello-auto-scroll .options-scroll:active {
-  background-color: #0099CC;
+.stop-scroll:hover,
+.stop-scroll:active,
+.stop-scroll:focus {
+  background: 100% #FF4444;
 }
