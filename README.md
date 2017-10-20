@@ -5,7 +5,7 @@
 
 ### Why?
 We decided to create this extension simply because we could not get an overview of all the columns created within Trello.
-So, this extension allow your Trello make a automatically scroll until the last column and back to the first card as a loop.
+So, this extension allow your Trello board make a automatically scroll until the last column and back to the first card as a loop.
 The most interesting thing is that you are able to set the time to pause in each column. It is also the time of transition animation between the columns.
 
 ### How To Use?
