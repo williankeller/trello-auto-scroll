@@ -1,97 +1,126 @@
 (function ($, chrome, window) {
   'use strict';
 
-  /**
-   * Scroll board to last card and back to the first one.
-   *
-   * @param Object items
-   *   Settings returned From google.
-   *
-   * @returns {Boolean}
+  /*
+   * Default settings.
+   * @type Object
    */
-  var trelloAutoScroll = function (items) {
-    // Get board variables.
-    var $board = $('#board'),
-      $cards = $('.list-wrapper').not('.js-add-list'),
-      scrollTime = items.scrollTime,
-      scrollStepBack = items.scrollStepBack,
-      animation = items.animationTime,
-      cards = 0,
-      margin = 10;
+  var settings = {
+    // Default start definitions.
+    defaults: {
+      animationTime: 800,
+      scrollStepBack: false,
+      scrollTime: 3500
+    },
 
-    // Map all cards and get there width size.
-    $cards.each(function () {
-      cards += $(this).width();
-    });
+    // Trello board ID.
+    board: '#board',
+    // Column definition.
+    column: {
+      list: '.list-wrapper',
+      exclude: '.js-add-list',
+      margin: 10
+    }
 
-    // Initial step is the same of all of the other steps.
-    var leftPos = 0,
-      scrollStep = (cards / $cards.length),
-      scrollPrev = margin,
-      direction = 'right';
-
-    // Set interval as a loop to stop by each card.
-    setInterval(function () {
-      // Update direction when direction back to initial point.
-      if (leftPos === 0) {
-        direction = 'right';
-      }
-
-      // While cards is more bigger then current scroll.
-      if ((cards >= leftPos) && ($board.scrollLeft() !== scrollPrev) && (direction === 'right')) {
-        // Save previus scroll.
-        scrollPrev = $board.scrollLeft();
-
-        // Increment scroll.
-        leftPos += parseInt(scrollStep + margin);
-
-        // Animate to right.
-        $board.animate({
-          scrollLeft: leftPos
-        }, animation);
-      }
-      // When all card was displayed.
-      else {
-        // Check if is needed to back in steps.
-        if (scrollStepBack) {
-          // Update direction to back to initial estate.
-          direction = 'left';
-          // Decrement left position in steps.
-          leftPos -= parseInt(scrollStep + margin);
-        }
-        // Set left position to initial point.
-        else {
-          leftPos = 0;
-        }
-        // Animate to left.
-        $board.animate({
-          scrollLeft: leftPos
-        }, animation);
-
-        scrollPrev = margin;
-      }
-    }, scrollTime);
   };
 
   /**
-   * Interval to detect if Trello board is already loaded.
+   * Function to check if Trello board exists and load default settings.
    *
-   * @type Interval
+   * @param {Function} callback
+   * @returns {Boolean|Object}
    */
-  var intervalListener = setInterval(function () {
-    // Board loaded already?
-    if ($('#board').length > 0) {
-      // Get chrome data.
-      chrome.storage.sync.get({
-        scrollTime: 3500,
-        scrollStepBack: false,
-        animationTime: 800
-      }, function (items) {
-        // Load function.
-        trelloAutoScroll(items);
-      });
-      // Stop interval.
-      window.clearInterval(intervalListener);
+  var boarding = function (callback) {
+    // Get chrome data.
+    chrome.storage.sync.get(settings.defaults, callback);
+  };
+
+  var getSizes = function () {
+    var sizeColumns = 0,
+      sizeBoard = $(settings.board).width(),
+      columns = $(settings.column.list);
+
+    // Map all columns and get there width size.
+    columns.each(function () {
+      sizeColumns += ($(this).width() + settings.column.margin);
+    });
+
+    return {
+      step: parseInt(sizeColumns / columns.length),
+      total: parseInt(sizeColumns - sizeBoard)
+    };
+  };
+
+  /**
+   * Create a scroll function to navegate for each column.
+   *
+   * @param {Int} size
+   * @param {Int} steps
+   */
+  var scrollAction = function (size, steps) {
+    // Increment scroll size.
+    steps += size.step;
+
+    // Total window size is still bigger than current scroll?
+    if (size.total >= steps) {
+      // Animate to right.
+      $(settings.board).animate({
+
+        scrollLeft: steps
+
+      }, settings.defaults.animationTime);
     }
-  }, 100);
+    // Set left position to initial point.
+    else {
+      steps = 0;
+    }
+  };
+
+  /**
+   * Scroll board to last column and back to the first one.
+   *
+   * @param {Boolean} action
+   * @returns {Boolean}
+   */
+  var trelloAutoScroll = function (action) {
+    // Board loaded already?
+    if ($(settings.board).length < 1) {
+      return false;
+    }
+
+    // Retrieve the Chrome storage values.
+    boarding(function (storage) {
+      settings.defaults = storage;
+    });
+
+    // Instance counter variables.
+    var steps = 0,
+      size = getSizes();
+
+    // Set interval as a loop to stop by each column.
+    setInterval(function () {
+
+      scrollAction(size, steps);
+
+    }, settings.defaults.scrollTime);
+  };
+
+  /**
+   * Add listener to request message defined under the popup file.
+   * Check if the requested action and execute the Auto Scroll function.
+   */
+  chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+      // Check if the scrolling actions is requested.
+      if (request.message === 'scrolling') {
+        // Scroll board to last column and back to the first one.
+        trelloAutoScroll(true);
+      }
+      else {
+        // Pause the scroll action.
+        trelloAutoScroll(false);
+      }
+    }
+  );
+
 })(jQuery, chrome, window);

@@ -61,7 +61,7 @@
   /**
    * Detect click action under the Start/Stop button.
    */
-  Selector.click(defaults.button, null, function (event, element) {
+  Selector.click(defaults.button, null, function (element, event) {
     // Toogle scrolling class.
     Selector.toggle(defaults.button, defaults.behavior);
 
@@ -73,6 +73,14 @@
     // Store scroll behavior action to Start or Pause.
     Storage.save({
       scrollAction: action
+    });
+
+    // Create a message to sent the action to content script.
+    chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
+      var activeTab = tabs[0];
+      chrome.tabs.sendMessage(activeTab.id, {
+        'message': action
+      });
     });
   });
 
