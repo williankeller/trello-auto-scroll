@@ -3,7 +3,7 @@
 
   "name": "Trello Auto Scroll",
   "description": "This extension allow your Trello scroll automatically until the last card and back to the first card as a loop.",
-  "version": "1.0",
+  "version": "1.1",
 
   "content_scripts": [
     {
