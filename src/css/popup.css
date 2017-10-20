@@ -22,7 +22,7 @@
 }
 
 .img-settings {
-  background: transparent url('../images/settings.svg') no-repeat center;
+  background: transparent url('../icons/settings.svg') no-repeat center;
   cursor: pointer;
   float: right;
   height: 20px;
