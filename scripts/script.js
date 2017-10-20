@@ -15,13 +15,12 @@
 
     // Trello board ID.
     board: '#board',
-    // Column definition.
+    // Column definitions
     column: {
       list: '.list-wrapper',
       exclude: '.js-add-list',
       margin: 10
     }
-
   };
 
   /**
@@ -35,6 +34,11 @@
     chrome.storage.sync.get(settings.defaults, callback);
   };
 
+  /**
+   * Get and define the scroll step size and board window size.
+   *
+   * @returns {Object} (step|total)
+   */
   var getSizes = function () {
     var sizeColumns = 0,
       sizeBoard = $(settings.board).width(),
@@ -52,28 +56,47 @@
   };
 
   /**
-   * Create a scroll function to navegate for each column.
+   * Create a scroll animation to navegate for each column.
    *
    * @param {Int} size
    * @param {Int} steps
    */
-  var scrollAction = function (size, steps) {
-    // Increment scroll size.
-    steps += size.step;
+  var scrollAnimation = function (define, steps) {
+    // Animate to right.
+    $(settings.board).animate({
 
-    // Total window size is still bigger than current scroll?
-    if (size.total >= steps) {
-      // Animate to right.
-      $(settings.board).animate({
+      scrollLeft: steps
 
-        scrollLeft: steps
+    }, define.defaults.animationTime);
+  };
 
-      }, settings.defaults.animationTime);
-    }
-    // Set left position to initial point.
-    else {
-      steps = 0;
-    }
+  /**
+   * Initialize the scroll action with a interval steps.
+   *
+   * @param {Object} define
+   */
+  var scrollAction = function (define) {
+    // Instance counter variables.
+    var steps = 0,
+      // Scroll step and board window size.
+      size = getSizes();
+
+    // Set interval as a loop to stop by each column.
+    setInterval(function () {
+      // Increment scroll size.
+      steps += size.step;
+      // Total window size is still bigger than current scroll?
+      if (size.total >= steps) {
+
+        // Scroll animation to navegate for each column.
+        scrollAnimation(define, steps);
+      }
+      // Set left position to initial point.
+      else {
+        steps = 0;
+      }
+      // Delay time between the setps.
+    }, define.defaults.scrollTime);
   };
 
   /**
@@ -90,19 +113,12 @@
 
     // Retrieve the Chrome storage values.
     boarding(function (storage) {
+      // Define the Chorme storage to default settings.
       settings.defaults = storage;
+
+      // Initialize the scroll action with a interval steps.
+      scrollAction(settings);
     });
-
-    // Instance counter variables.
-    var steps = 0,
-      size = getSizes();
-
-    // Set interval as a loop to stop by each column.
-    setInterval(function () {
-
-      scrollAction(size, steps);
-
-    }, settings.defaults.scrollTime);
   };
 
   /**
