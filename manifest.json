@@ -2,31 +2,32 @@
   "manifest_version": 2,
 
   "name": "Trello Auto Scroll",
-  "description": "This extension allow your Trello scroll automatically until the last card and back to the first card as a loop.",
-  "version": "1.1",
+  "description": "This extension Allow your Trello automatically scroll in loop if you have more columns than fit in your screen.",
+  "version": "1.",
 
   "content_scripts": [
     {
       "matches": ["https://trello.com/*"],
       "js": [
-        "scripts/jquery-3.2.1.min.js",
-        "scripts/script.js"
+        "src/vendor/jquery.min.js",
+        "src/main.js"
       ],
       "run_at": "document_end"
     }
   ],
 
   "options_ui": {
-    "page": "pages/options.html",
+    "page": "src/options.html",
     "chrome_style": true
   },
 
   "icons": {
-    "128": "images/icon.png"
+    "128": "src/icons/icon.png"
   },
 
   "browser_action": {
-    "default_icon": "images/icon.png",
+    "default_icon": "src/icons/icon.png",
+    "default_popup": "src/popup.html",
     "default_title": "Trello Auto Scroll"
   },
 
