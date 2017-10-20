@@ -12,7 +12,6 @@
       scrollStepBack: false,
       scrollTime: 3500
     },
-
     // Trello board ID.
     board: '#board',
     // Column definitions
@@ -20,7 +19,10 @@
       list: '.list-wrapper',
       exclude: '.js-add-list',
       margin: 10
-    }
+    },
+    // Actions to define board.
+    position: 0,
+    interval: null
   };
 
   /**
@@ -37,7 +39,7 @@
   /**
    * Get and define the scroll step size and board window size.
    *
-   * @returns {Object} (step|total)
+   * @returns {Object}
    */
   var getSizes = function () {
     var sizeColumns = 0,
@@ -58,15 +60,15 @@
   /**
    * Create a scroll animation to navegate for each column.
    *
-   * @param {Int} size
+   * @param {Object} define
    * @param {Int} steps
    */
   var scrollAnimation = function (define, steps) {
     // Animate to right.
     $(settings.board).animate({
-
+      // Steps to scroll.
       scrollLeft: steps
-
+      // Animation delay time.
     }, define.defaults.animationTime);
   };
 
@@ -75,25 +77,32 @@
    *
    * @param {Object} define
    */
-  var scrollAction = function (define) {
+  var scrollAction = function (define, action) {
+    // Check if need to stop interval.
+    if (action === 'stop') {
+      // Clear current interval.
+      clearInterval(settings.interval);
+
+      // Return to kill function.
+      return false;
+    }
+
     // Instance counter variables.
-    var steps = 0,
-      // Scroll step and board window size.
-      size = getSizes();
+    var size = getSizes();
 
     // Set interval as a loop to stop by each column.
-    setInterval(function () {
+    settings.interval = setInterval(function () {
       // Increment scroll size.
-      steps += size.step;
+      settings.position += size.step;
       // Total window size is still bigger than current scroll?
-      if (size.total >= steps) {
+      if (size.total >= settings.position) {
 
         // Scroll animation to navegate for each column.
-        scrollAnimation(define, steps);
+        scrollAnimation(define, settings.position);
       }
       // Set left position to initial point.
       else {
-        steps = 0;
+        settings.position = 0;
       }
       // Delay time between the setps.
     }, define.defaults.scrollTime);
@@ -117,7 +126,7 @@
       settings.defaults = storage;
 
       // Initialize the scroll action with a interval steps.
-      scrollAction(settings);
+      scrollAction(settings, action);
     });
   };
 
@@ -130,11 +139,11 @@
       // Check if the scrolling actions is requested.
       if (request.message === 'scrolling') {
         // Scroll board to last column and back to the first one.
-        trelloAutoScroll(true);
+        trelloAutoScroll();
       }
       else {
         // Pause the scroll action.
-        trelloAutoScroll(false);
+        trelloAutoScroll('stop');
       }
     }
   );
