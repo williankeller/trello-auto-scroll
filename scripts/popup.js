@@ -42,7 +42,7 @@
   /**
    * Retrieve values from Chrome storage and change button behavior.
    */
-  var set = function () {
+  var start = function () {
     Storage.get({
       scrollAction: false
     }, function (storage) {
@@ -61,7 +61,7 @@
   /**
    * Detect click action under the Start/Stop button.
    */
-  Selector.click(defaults.button, null, function (element, event) {
+  Selector.click(defaults.button, null, function () {
     // Toogle scrolling class.
     Selector.toggle(defaults.button, defaults.behavior);
 
@@ -91,14 +91,13 @@
     if (chrome.runtime.openOptionsPage) {
       // New way to open options pages, if supported (Chrome 42+).
       chrome.runtime.openOptionsPage();
-    }
-    else {
+    } else {
       // Reasonable fallback.
       window.open(chrome.runtime.getURL('options.html'));
     }
   });
 
   // Set default button behavior.
-  document.addEventListener('DOMContentLoaded', set);
+  document.addEventListener('DOMContentLoaded', start);
 
 })(chrome, window, Selector, Storage);

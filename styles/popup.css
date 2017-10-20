@@ -67,11 +67,11 @@
 }
 
 .scrolling {
-  background: 100% #fd7461;
-  box-shadow: 0 2px 0 #ff5151;
+  background: 100% #ffa500;
+  box-shadow: 0 2px 0 #e8a121;
 }
 .scrolling:hover,
 .scrolling:active,
 .scrolling:focus {
-  background: 100% #ff5151;
+  background: 100% #e8a121;
 }

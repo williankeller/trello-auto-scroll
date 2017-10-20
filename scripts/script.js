@@ -12,6 +12,10 @@
       scrollStepBack: false,
       scrollTime: 3500
     },
+    // Retrieve currrent action to load page.
+    action: {
+      scrollAction: false
+    },
     // Trello board ID.
     board: '#board',
     // Column definitions
@@ -22,18 +26,20 @@
     },
     // Actions to define board.
     position: 0,
-    interval: null
+    interval: null,
+    direction: 'right'
   };
 
   /**
    * Function to check if Trello board exists and load default settings.
    *
+   * @param {Object} request
    * @param {Function} callback
    * @returns {Boolean|Object}
    */
-  var boarding = function (callback) {
+  var boarding = function (request, callback) {
     // Get chrome data.
-    chrome.storage.sync.get(settings.defaults, callback);
+    chrome.storage.sync.get(request, callback);
   };
 
   /**
@@ -48,12 +54,11 @@
 
     // Map all columns and get there width size.
     columns.each(function () {
-      sizeColumns += ($(this).width() + settings.column.margin);
+      sizeColumns += parseInt($(this).outerWidth() + settings.column.margin);
     });
-
     return {
-      step: parseInt(sizeColumns / columns.length),
-      total: parseInt(sizeColumns - sizeBoard)
+      step: (sizeColumns / columns.length),
+      total: (sizeColumns - sizeBoard)
     };
   };
 
@@ -68,7 +73,8 @@
     $(settings.board).animate({
       // Steps to scroll.
       scrollLeft: steps
-      // Animation delay time.
+
+        // Animation delay time.
     }, define.defaults.animationTime);
   };
 
@@ -86,24 +92,39 @@
       // Return to kill function.
       return false;
     }
-
     // Instance counter variables.
     var size = getSizes();
 
     // Set interval as a loop to stop by each column.
     settings.interval = setInterval(function () {
-      // Increment scroll size.
-      settings.position += size.step;
-      // Total window size is still bigger than current scroll?
-      if (size.total >= settings.position) {
+      // Update direction when direction back to initial point.
+      if (settings.position === 0) {
+        settings.direction = 'right';
+      }
 
-        // Scroll animation to navegate for each column.
-        scrollAnimation(define, settings.position);
+      // Total window size is still bigger than current scroll?
+      if ((size.total >= settings.position) && (settings.direction === 'right')) {
+        // Increment scroll size.
+        settings.position += size.step;
       }
-      // Set left position to initial point.
+      // When all card was displayed.
       else {
-        settings.position = 0;
+        // Check if is needed to back in steps.
+        if (define.defaults.scrollStepBack) {
+          // Update direction to back to initial estate.
+          settings.direction = 'left';
+
+          // Decrement scroll size.
+          settings.position -= size.step;
+        }
+        // Set left position to initial point.
+        else {
+          settings.position = 0;
+        }
       }
+      // Scroll animation to navegate for each column.
+      scrollAnimation(define, settings.position);
+
       // Delay time between the setps.
     }, define.defaults.scrollTime);
   };
@@ -120,8 +141,8 @@
       return false;
     }
 
-    // Retrieve the Chrome storage values.
-    boarding(function (storage) {
+    // Load default settings and start scroll action.
+    boarding(settings.defaults, function (storage) {
       // Define the Chorme storage to default settings.
       settings.defaults = storage;
 
@@ -131,7 +152,7 @@
   };
 
   /**
-   * Add listener to request message defined under the popup file.
+   * Add listener to request message defined by action under the popup file.
    * Check if the requested action and execute the Auto Scroll function.
    */
   chrome.runtime.onMessage.addListener(
@@ -141,11 +162,35 @@
         // Scroll board to last column and back to the first one.
         trelloAutoScroll();
       }
+      // Pause the scroll action..
       else {
-        // Pause the scroll action.
         trelloAutoScroll('stop');
       }
     }
   );
+
+  /**
+   * Iniciate globally to detect if Trello board is already loaded.
+   */
+  var intervalListener = setInterval(function () {
+    // Board loaded already?
+    if ($(settings.board).length > 0) {
+      // Stop interval.
+      clearInterval(intervalListener);
+    }
+
+    // Load default action and start scroll action.
+    boarding(settings.action, function (storage) {
+      // Start paused if button to start is not pressed yet.
+      if (storage.scrollAction === false) {
+        // Pause the scroll action.
+        trelloAutoScroll('stop');
+
+        return false;
+      }
+      // Start board if there is no rquest to pause.
+      trelloAutoScroll();
+    });
+  }, 100);
 
 })(jQuery, chrome, window);
