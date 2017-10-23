@@ -3,8 +3,8 @@
 [badge-chrome]: https://img.shields.io/badge/Chrome-v1.3-blue.svg
 [link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
 
-[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.3-blue.svg
-[link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Add-ons"
+[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.3-orange.svg
+[link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Mozilla Add-ons"
 
 ### Why?
 We decided to create this extension simply because we could not get an overview of all the columns created within Trello.
