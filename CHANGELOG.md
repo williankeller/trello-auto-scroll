@@ -29,5 +29,5 @@ All notable changes to this project will be documented in this file.
 ### Fixed 
 - Fix files indentation.
 
-[1.0]: https://github.com/williankeller/trello-auto-scroll/compare/v1.0...v1.1
+[1.1]: https://github.com/williankeller/trello-auto-scroll/compare/v1.0...v1.1
 [1.3]: https://github.com/williankeller/trello-auto-scroll/compare/v1.1...v1.3
