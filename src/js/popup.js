@@ -1,4 +1,4 @@
-(function (chrome, window, Selector, Storage) {
+(function (chrome, window, Selector, Storage, Runtime) {
   'use strict';
 
   /**
@@ -76,9 +76,9 @@
     });
 
     // Create a message to sent the action to content script.
-    chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
+    Runtime.api('tabs').query({currentWindow: true, active: true}, function (tabs) {
       var activeTab = tabs[0];
-      chrome.tabs.sendMessage(activeTab.id, {
+      Runtime.api('tabs').sendMessage(activeTab.id, {
         'message': action
       });
     });
@@ -88,16 +88,16 @@
    * Go to the settings page.
    */
   Selector.click('.open-options', null, function () {
-    if (chrome.runtime.openOptionsPage) {
+    if (Runtime.api('runtime').openOptionsPage) {
       // New way to open options pages, if supported (Chrome 42+).
-      chrome.runtime.openOptionsPage();
+      Runtime.api('runtime').openOptionsPage();
     } else {
       // Reasonable fallback.
-      window.open(chrome.runtime.getURL('options.html'));
+      window.open(Runtime.api('runtime').getURL('options.html'));
     }
   });
 
   // Set default button behavior.
   document.addEventListener('DOMContentLoaded', start);
 
-})(chrome, window, Selector, Storage);
+})(chrome, window, Selector, Storage, Runtime);

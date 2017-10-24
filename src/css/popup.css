@@ -62,7 +62,7 @@
 .action-scroll:focus {
   cursor: pointer;
   outline: none;
-  transition: background .3s ease;
+  transition: all .3s ease;
   background: 100% #519839;
 }
 
