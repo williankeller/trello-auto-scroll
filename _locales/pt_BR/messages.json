@@ -1,0 +1,28 @@
+{
+  "appName": {
+    "message": "Trello Auto Scroll",
+    "description": "O título do aplicativo, exibido na loja da web."
+  },
+  "appDesc": {
+    "message": "Esta extensão permite que seu Trello role automaticamente se você tiver mais colunas do que cabem na tela.", 
+    "description": "A descrição do aplicativo, exibida na web store."
+  },
+  
+  "buttonStart": {
+    "message": "Iniciar deslocamento",
+    "description": "Texto do botão para Iniciar deslocamento, exibido em pop-up."
+  },
+  "buttonPause": {
+    "message": "Pausar deslocamento",
+    "description": "Texto de botão para Parar deslocamento, exibido em pop-up."
+  },
+  "buttonOptions": {
+    "message": "Opções",
+    "description": "Texto do título do botão de opções, exibido em pop-up."
+  },
+  "buttonSave": {
+    "message": "Gravar opções",
+    "description": "Texto do botão para Salvar opções, exibido na página de opções."
+  }
+  
+}

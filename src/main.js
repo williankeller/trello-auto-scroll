@@ -1,4 +1,4 @@
-(function ($, chrome, window) {
+(function ($, chrome, window, Storage) {
   'use strict';
 
   /*
@@ -38,8 +38,8 @@
    * @returns {Boolean|Object}
    */
   var boarding = function (request, callback) {
-    // Get chrome data.
-    chrome.storage.sync.get(request, callback);
+    // Get saved data.
+    Storage.get(request, callback);
   };
 
   /**
@@ -75,7 +75,7 @@
       scrollLeft: steps
 
         // Animation delay time.
-    }, define.defaults.animationTime);
+    }, parseInt(define.defaults.animationTime));
   };
 
   /**
@@ -189,8 +189,8 @@
         return false;
       }
       // Start board if there is no rquest to pause.
-      trelloAutoScroll();
+      trelloAutoScroll('start');
     });
   }, 100);
 
-})(jQuery, chrome, window);
+})(jQuery, chrome, window, Storage);

@@ -1,0 +1,28 @@
+{
+  "appName": {
+    "message": "Trello Auto Scroll",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "This extension Allow your Trello automatically scroll in loop if you have more columns than fit in your screen.", 
+    "description": "The description of the application, displayed in the web store."
+  },
+  
+  "buttonStart": {
+    "message": "Start auto scroll",
+    "description": "Button text to Start scroll, displayed in popup."
+  },
+  "buttonPause": {
+    "message": "Pause auto scroll",
+    "description": "Button text to Stop scroll, displayed in popup."
+  },
+  "buttonOptions": {
+    "message": "Options",
+    "description": "Title text to the options button, displayed in popup."
+  },
+  "buttonSave": {
+    "message": "Save options",
+    "description": "Button text to Save options, displayed in options page."
+  }
+  
+}
