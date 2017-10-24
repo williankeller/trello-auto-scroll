@@ -1,6 +1,6 @@
 .main-container {
   margin: 0;
-  min-width: 180px;
+  min-width: 200px;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@
 .button-area {
   display: inline-block;
   margin: 5px;
-  width: 140px;
+  width: 150px;
 }
 
 .action-scroll {

@@ -7,13 +7,24 @@
    */
   var defaults = {
     // Texto to Start scroll action.
-    startText: 'Start auto scroll',
+    startText: Runtime.api('i18n').getMessage('buttonStart'),
     // Text to Pause scroll action.
-    pauseText: 'Pause auto scroll',
+    pauseText: Runtime.api('i18n').getMessage('buttonPause'),
     // Button element class.
     button: '.action-scroll',
     // Expected element style action.
     behavior: 'scrolling'
+  };
+
+  /**
+   * Set a translatable variable to a element.
+   *
+   * @param {Object} element
+   * @param {String} obj
+   * @param {String} string
+   */
+  var translate = function (element, obj, string) {
+    element[obj] = Runtime.api('i18n').getMessage(string);
   };
 
   /**
@@ -43,6 +54,7 @@
    * Retrieve values from Chrome storage and change button behavior.
    */
   var start = function () {
+    // Get saved options.
     Storage.get({
       scrollAction: false
     }, function (storage) {
@@ -51,11 +63,15 @@
         // Add behavior as element class.
         Selector.addClass(defaults.button, defaults.behavior);
       }
+
       /**
        * Handler button behavior, changing text and color.
        */
       button();
     });
+
+    // Set button options title.
+    translate(Selector.element('.img-settings'), 'title', 'buttonOptions');
   };
 
   /**
