@@ -75,7 +75,7 @@
       scrollLeft: steps
 
         // Animation delay time.
-    }, define.defaults.animationTime);
+    }, parseInt(define.defaults.animationTime));
   };
 
   /**
@@ -189,7 +189,7 @@
         return false;
       }
       // Start board if there is no rquest to pause.
-      trelloAutoScroll();
+      trelloAutoScroll('start');
     });
   }, 100);
 
