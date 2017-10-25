@@ -1,4 +1,4 @@
-# Trello Auto Scroll 
+# Trello Auto Scroll (Available to Chrome & Firefox)
 
 [![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla]
 
@@ -9,7 +9,7 @@
 [link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Mozilla Add-ons"
 
 ### Why?
-We decided to create this extension simply because we could not get an overview of all the columns created within Trello.
+We decided to create this extension simply because we couldn't get an overview of all the columns created within Trello.
 So, this extension allow your Trello board make a automatically scroll until the last column and back to the first card as a loop.
 The most interesting thing is that you are able to set the time to pause in each column. It is also the time of transition animation between the columns.
 
