@@ -1,6 +1,24 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4] - 2017-10-24
+### Added
+- Locales (English, Portuguese).
+- Minified utils files.
+
+### Changed
+- Improve cross-browser compatibility.
+- Change description to add Firefox compatibility.
+- Improve popup layout.
+- Improve storage load.
+- Change utils filename to minified file.
+
+### Fixed
+- Fix scroll animate time.
+
+### Removed
+- Uncompressed utils files.
+
 ## [1.3] - 2017-10-20 
 ### Added
 - Add start/stop scroll button functionality.
@@ -31,3 +49,4 @@ All notable changes to this project will be documented in this file.
 
 [1.1]: https://github.com/williankeller/trello-auto-scroll/compare/v1.0...v1.1
 [1.3]: https://github.com/williankeller/trello-auto-scroll/compare/v1.1...v1.3
+[1.4]: https://github.com/williankeller/trello-auto-scroll/compare/v1.3...v1.4
