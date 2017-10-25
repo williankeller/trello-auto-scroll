@@ -1,6 +1,6 @@
-# Trello Auto Scroll (Available to Chrome & Firefox)
+# Trello Auto Scroll
 
-[![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla]
+[![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla] (Available to Chrome & Firefox)
 
 [badge-chrome]: https://img.shields.io/badge/Chrome-v1.3-blue.svg
 [link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
