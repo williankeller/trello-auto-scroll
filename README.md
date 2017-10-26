@@ -2,7 +2,7 @@
 
 [![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla] (Available to Chrome & Firefox)
 
-[badge-chrome]: https://img.shields.io/badge/Chrome-v1.3-blue.svg
+[badge-chrome]: https://img.shields.io/badge/Chrome-v1.4-blue.svg
 [link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
 
 [badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.4-orange.svg
@@ -26,4 +26,4 @@ The most interesting thing is that you are able to set the time to pause in each
 4. Open your Trello Board, click at the extension icon and just **Start auto scroll**!
 
 ### Can I contribute?
-Sure! We need all help to make this extension better and better. Just take a look at the [CONTRIBUTING.md](https://github.com/williankeller/trello-auto-scroll/blob/master/CONTRIBUTING.md) file to follow the contributing process. 
+Sure! We need all help to make this extension better and better. Just take a look at the [CONTRIBUTING.md](https://github.com/williankeller/trello-auto-scroll/blob/master/CONTRIBUTING.md) file to follow the contributing process.
