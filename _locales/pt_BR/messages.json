@@ -1,28 +1,42 @@
 {
   "appName": {
-    "message": "Trello Auto Scroll",
-    "description": "O título do aplicativo, exibido na loja da web."
+    "message": "Trello Auto Scroll"
   },
   "appDesc": {
-    "message": "Esta extensão permite que seu Trello role automaticamente se você tiver mais colunas do que cabem na tela.", 
-    "description": "A descrição do aplicativo, exibida na web store."
+    "message": "Esta extensão permite que seu Trello role automaticamente se você tiver mais colunas do que cabem na tela."
   },
-  
+
   "buttonStart": {
-    "message": "Iniciar deslocamento",
-    "description": "Texto do botão para Iniciar deslocamento, exibido em pop-up."
+    "message": "Iniciar deslocamento"
   },
   "buttonPause": {
-    "message": "Pausar deslocamento",
-    "description": "Texto de botão para Parar deslocamento, exibido em pop-up."
+    "message": "Pausar deslocamento"
   },
   "buttonOptions": {
-    "message": "Opções",
-    "description": "Texto do título do botão de opções, exibido em pop-up."
+    "message": "Opções"
   },
-  "buttonSave": {
-    "message": "Gravar opções",
-    "description": "Texto do botão para Salvar opções, exibido na página de opções."
+
+  "buttonToSave": {
+    "message": "Gravar opções"
+  },
+  "buttonSaved": {
+    "message": "Salvo!"
+  },
+
+  "buttonToReset": {
+    "message": "Reiniciar"
+  },
+  "buttonReset": {
+    "message": "Reiniciado!"
+  },
+
+  "labelDelayScroll": {
+    "message": "Tempo de atraso para rolar entre as colunas."
+  },
+  "labelAnimateTime": {
+    "message": "Tempo de animação de transição."
+  },
+  "labelScrollSteps": {
+    "message": "Voltar para o início em etapas."
   }
-  
 }
