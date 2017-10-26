@@ -1,49 +1,188 @@
-.success,
-.error {
-  margin-top: 6px;
-}
-.success {
-  color: green;
-}
-.error {
-  color: red;
+.main-container {
+  padding: 10px 10px 0;
 }
 .field {
-  display: block;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
-.field:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-label span {
-  cursor: pointer;
-  margin-left: 5px;
-}
-.text {
-  margin-left: 8px;
-  margin-right: 4px;
-  width: 45px;
-  border-radius: 3px;
-  border: 1px solid #bbb;
-  padding: 5px;
-}
-.suffix {
-  color: gray;
-  margin-left: 5px;
+.field-checkbox {
+  margin-bottom: 20px;
+  position: relative;
 }
 .half {
-  width: 50%;
+  display: inline-block;
+  width: 49%;
+}
+
+input[type=range] {
+  margin: 10px 0;
+  width: 100%;
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  animate: .2s;
+  background: #dddddd;
+  border-radius: 20px;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+  cursor: pointer;
+  border: 0;
+  height: 12px;
+  width: 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+  background: #026aa7;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+  cursor: pointer;
+  margin-top: -2px;
+  height: 16px;
+  width: 30px;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #dddddd;
+}
+input[type=range]::-moz-range-track {
+  animate: .2s;
+  background: #dddddd;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+  cursor: pointer;
+  height: 12px;
+  width: 100%;
+}
+input[type=range]::-moz-range-thumb {
+  background: #026aa7;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+  border-radius: 7px;
+  border: 0;
+  cursor: pointer;
+  height: 20px;
+  width: 38px;
+}
+input[type=range]::-ms-track {
+  animate: .2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+  cursor: pointer;
+  height: 12px;
+  width: 100%;
+}
+input[type=range]::-ms-fill-lower {
+  background: #dddddd;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+}
+input[type=range]::-ms-fill-upper {
+  background: #dddddd;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+}
+input[type=range]::-ms-thumb {
+  background: #026aa7;
+  border: 0;
+  border-radius: 7px;
+  box-shadow: 0 0 0 #026aa7, 0 0 0 #026aa7;
+  cursor: pointer;
+  height: 20px;
+  width: 39px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #dddddd;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #dddddd;
+}
+
+.scroll-steps-label {
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  min-height: 18px;
+  padding-left: 25px;
   position: relative;
+}
+.scroll-steps-label:before {
+  background-color: #fff;
+  border: 1px solid rgba(120, 130, 140, .5);
+  border-radius: 4px;
+  content: "";
+  display: inline-block;
+  height: 18px;
+  left: 0;
+  outline: 0;
+  position: absolute;
+  transition: .3s ease-in-out;
+  top: -1px;
+  width: 18px;
+}
+.scroll-steps-label span {
   display: block;
-  min-height: 30px;
+  position: relative;
+  padding-top: 2px;
+}
+input[type=checkbox] {
+  cursor: pointer;
+  opacity: 0;
+  outline: 0;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+input[type=checkbox]:checked+label::before {
+  background-color: #026aa7;
+  border-color: #026aa7;
+}
+
+.reset-options,
+.save-options {
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 0;
+  padding: 4px 15px 3px;
+  text-align: center;
+  width: 120px;
+}
+
+.save-options {
+  background: 100% #5AAC44;
+  box-shadow: 0 2px 0 #519839;
+  float: right;
+}
+.save-options:hover,
+.save-options:active,
+.save-options:focus {
+  background: 100% #519839;
+  cursor: pointer;
+  outline: none;
+  transition: all .3s ease;
+}
+
+.reset-options {
+  background: 100% #ffa500;
+  box-shadow: 0 2px 0 #e8a121;
   float: left;
 }
-.btn {
-  float: right;
-  padding: 4px 14px;
-}
-.btn:hover {
+.reset-options:hover,
+.reset-options:active,
+.reset-options:focus {
+  background: 100% #e8a121;
   cursor: pointer;
+  outline: none;
+  transition: all .3s ease;
 }

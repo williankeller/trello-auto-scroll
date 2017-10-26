@@ -8,9 +8,9 @@
   var settings = {
     // Default start definitions.
     defaults: {
-      animationTime: 800,
-      scrollStepBack: false,
-      scrollTime: 3500
+      animateTime: 800,
+      scrollSteps: false,
+      delayScroll: 3500
     },
     // Retrieve currrent action to load page.
     action: {
@@ -75,7 +75,7 @@
       scrollLeft: steps
 
         // Animation delay time.
-    }, parseInt(define.defaults.animationTime));
+    }, parseInt(define.defaults.animateTime));
   };
 
   /**
@@ -110,7 +110,7 @@
       // When all card was displayed.
       else {
         // Check if is needed to back in steps.
-        if (define.defaults.scrollStepBack) {
+        if (define.defaults.scrollSteps) {
           // Update direction to back to initial estate.
           settings.direction = 'left';
 
@@ -126,7 +126,7 @@
       scrollAnimation(define, settings.position);
 
       // Delay time between the setps.
-    }, define.defaults.scrollTime);
+    }, define.defaults.delayScroll);
   };
 
   /**
@@ -160,7 +160,7 @@
       // Check if the scrolling actions is requested.
       if (request.message === 'scrolling') {
         // Scroll board to last column and back to the first one.
-        trelloAutoScroll();
+        trelloAutoScroll('start');
       }
       // Pause the scroll action..
       else {
