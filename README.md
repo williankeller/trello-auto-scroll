@@ -1,6 +1,6 @@
 # Trello Auto Scroll
 
-[![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla] (Available to Chrome & Firefox)
+[![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla]
 
 [badge-chrome]: https://img.shields.io/badge/Chrome-v1.4-blue.svg
 [link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
@@ -8,10 +8,12 @@
 [badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.4-orange.svg
 [link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Mozilla Add-ons"
 
+_Now our extension is available on the official [Trello Integrations](https://trello.com/integrations) page._
+
 ### Why?
 We decided to create this extension simply because we couldn't get an overview of all the columns created within Trello.
 So, this extension allow your Trello board make a automatically scroll until the last column and back to the first card as a loop.
-The most interesting thing is that you are able to set the time to pause in each column. It is also the time of transition animation between the columns.
+The most interesting thing is that you are able to set the time to pause in each column. It is also the time of transition animation between the columns. 
 
 ### How To Install to Chrome?
 1. Go to [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and search by **Trello Auto Scroll** or use [this link](https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk) instead.
