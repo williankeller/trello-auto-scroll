@@ -50,5 +50,9 @@
   "labelScrollSteps": {
     "message": "Scroll to the beginning in steps.",
     "description": "Label text to define with you want to scroll back in steps."
+  },
+  "labelInputSecond": {
+    "message": "seconds",
+    "description": "Label text to display the seconds that user can define manually."
   }
 }

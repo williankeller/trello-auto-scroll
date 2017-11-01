@@ -8,9 +8,9 @@
   var settings = {
     // Default start definitions.
     defaults: {
-      animateTime: 800,
-      scrollSteps: false,
-      delayScroll: 3500
+      animateTime: 1,
+      delayScroll: 3.5,
+      scrollSteps: false
     },
     // Retrieve currrent action to load page.
     action: {
@@ -63,6 +63,16 @@
   };
 
   /**
+   * Convert seconds to milliseconds.
+   *
+   * @param {Number} value
+   * @returns {Numbe}
+   */
+  var convertSeconds = function (value) {
+    return parseInt(value * 1000);
+  };
+
+  /**
    * Create a scroll animation to navegate for each column.
    *
    * @param {Object} define
@@ -73,9 +83,8 @@
     $(settings.board).animate({
       // Steps to scroll.
       scrollLeft: steps
-
         // Animation delay time.
-    }, parseInt(define.defaults.animateTime));
+    }, convertSeconds(define.defaults.animateTime));
   };
 
   /**
@@ -83,7 +92,7 @@
    *
    * @param {Object} define
    */
-  var scrollAction = function (define, action) {
+  var toScrollAction = function (define, action) {
     // Check if need to stop interval.
     if (action === 'stop') {
       // Clear current interval.
@@ -126,7 +135,7 @@
       scrollAnimation(define, settings.position);
 
       // Delay time between the setps.
-    }, define.defaults.delayScroll);
+    }, convertSeconds(define.defaults.delayScroll));
   };
 
   /**
@@ -147,7 +156,7 @@
       settings.defaults = storage;
 
       // Initialize the scroll action with a interval steps.
-      scrollAction(settings, action);
+      toScrollAction(settings, action);
     });
   };
 

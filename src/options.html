@@ -9,11 +9,19 @@
     <div class="main-container">
       <div  class="field">
         <label class="delay-scroll-label"></label>
-        <input type="range" class="delay-scroll" min="500" max="5000" step="500">
+        <input type="range" class="delay-scroll-range" min="0.5" max="6" step="0.5">
+        <div class="input-change">
+          <input type="number"  class="delay-scroll" min="0" max="99">
+          <span class="seconds-div1-label"></span>
+        </div>
       </div>
       <div class="field">
         <label class="animate-time-label"></label>
-        <input type="range" class="animate-time" min="500" max="1500" step="100">
+        <input type="range" class="animate-time-range" min="0.5" max="3" step="0.5">
+        <div class="input-change">
+          <input type="number" class="animate-time" min="0" max="99">
+          <span class="seconds-div2-label"></span>
+        </div>
       </div>
       <div class="field-checkbox"> 
         <input type="checkbox" class="scroll-steps" role="checkbox" aria-checked="false" value="1">
