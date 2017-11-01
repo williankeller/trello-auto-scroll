@@ -3,7 +3,7 @@
 [badge-chrome]: https://img.shields.io/badge/Chrome-v1.4-blue.svg
 [link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
 
-[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.4-orange.svg
+[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.6-orange.svg
 [link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Mozilla Add-ons"
 
 _Now our extension is available on the official [Trello Integrations](https://trello.com/integrations) page._
