@@ -1,6 +1,28 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.6] - 2017-11-01
+### Added
+- FireFox sync storage compatibility.
+
+### Changed
+- Update Storage file to 1.2 version.
+- Improve FireFox options page style.
+- Improve function selectors
+
+
+## [1.5] - 2017-11-01
+### Added
+- New options page UI.
+- Button to reset to default options.
+- Option to range the time to delay between the columns scroll.
+- Option to range the time to animate action between the columns.
+- Option to set a time manually in seconds.
+
+### Changed
+- Improved options page locales (English, Portuguese).
+
+
 ## [1.4] - 2017-10-24
 ### Added
 - Locales (English, Portuguese).
@@ -50,3 +72,5 @@ All notable changes to this project will be documented in this file.
 [1.1]: https://github.com/williankeller/trello-auto-scroll/compare/v1.0...v1.1
 [1.3]: https://github.com/williankeller/trello-auto-scroll/compare/v1.1...v1.3
 [1.4]: https://github.com/williankeller/trello-auto-scroll/compare/v1.3...v1.4
+[1.5]: https://github.com/williankeller/trello-auto-scroll/compare/v1.4...v.1.5
+[1.6]: https://github.com/williankeller/trello-auto-scroll/compare/v.1.5...v1.6
