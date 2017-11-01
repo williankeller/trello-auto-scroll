@@ -153,7 +153,6 @@
 
     // Restart and fill fields with new storage values.
     fillFields();
-    return false;
   });
 
   // Set default options or saved options already.

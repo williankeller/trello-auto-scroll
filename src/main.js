@@ -1,4 +1,4 @@
-(function ($, chrome, window, Storage) {
+(function ($, Storage, Runtime) {
   'use strict';
 
   /*
@@ -164,7 +164,7 @@
    * Add listener to request message defined by action under the popup file.
    * Check if the requested action and execute the Auto Scroll function.
    */
-  chrome.runtime.onMessage.addListener(
+  Runtime.api('runtime').onMessage.addListener(
     function (request, sender, sendResponse) {
       // Check if the scrolling actions is requested.
       if (request.message === 'scrolling') {
@@ -189,9 +189,9 @@
     }
 
     // Load default action and start scroll action.
-    boarding(settings.action, function (storage) {
+    boarding(settings.action, function (data) {
       // Start paused if button to start is not pressed yet.
-      if (storage.scrollAction === false) {
+      if (data.scrollAction === false) {
         // Pause the scroll action.
         trelloAutoScroll('stop');
 
@@ -202,4 +202,4 @@
     });
   }, 100);
 
-})(jQuery, chrome, window, Storage);
+})(jQuery, Storage, Runtime);
