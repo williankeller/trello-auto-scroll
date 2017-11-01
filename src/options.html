@@ -8,27 +8,37 @@
   <body>
     <div class="main-container">
       <div  class="field">
-        <label>Scroll Time</label>
-        <input type="text" class="text" id="scroll-time"><span class="suffix">ms</span>
+        <label class="delay-scroll-label"></label>
+        <input type="range" class="delay-scroll-range" min="0.5" max="6" step="0.5">
+        <div class="input-change">
+          <input type="number"  class="delay-scroll" min="0" max="99">
+          <span class="seconds-div1-label"></span>
+        </div>
       </div>
       <div class="field">
-        <label>
-          <input type="checkbox" id="scroll-step-back"><span>Scroll Back in Steps</span>
-        </label>
+        <label class="animate-time-label"></label>
+        <input type="range" class="animate-time-range" min="0.5" max="3" step="0.5">
+        <div class="input-change">
+          <input type="number" class="animate-time" min="0" max="99">
+          <span class="seconds-div2-label"></span>
+        </div>
       </div>
-      <div class="field">
-        <label>Animation Time</label>
-        <input type="text" class="text" id="animation-time"><span class="suffix">ms</span>
+      <div class="field-checkbox"> 
+        <input type="checkbox" class="scroll-steps" role="checkbox" aria-checked="false" value="1">
+        <label class="scroll-steps-label"></label>
       </div>
       <div class="field">
         <div class="half">
-          <div id="status"></div>
+          <button class="reset-options"></button>
         </div>
         <div class="half">
-          <button class="btn" id="save">Save</button>
+          <button class="save-options"></button>
         </div>
       </div>
     </div>
+    <script src="utils/selector.min.js"></script>
+    <script src="utils/runtime.min.js"></script>
+    <script src="utils/storage.min.js"></script>
     <script src="js/options.js"></script>
   </body>
 </html>

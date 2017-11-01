@@ -20,9 +20,39 @@
     "message": "Options",
     "description": "Title text to the options button, displayed in popup."
   },
-  "buttonSave": {
+  
+  "buttonToSave": {
     "message": "Save options",
     "description": "Button text to Save options, displayed in options page."
-  }
+  },
+   "buttonSaved": {
+    "message": "Saved!",
+    "description": "Button text to Saved options, displayed in options page."
+  },
   
+  "buttonToReset": {
+    "message": "Reset options",
+    "description": "Button text to Reset options, displayed in options page."
+  },
+   "buttonReset": {
+    "message": "Restored!",
+    "description": "Button text to Reseted options, displayed in options page."
+  },
+  
+  "labelDelayScroll": {
+    "message": "Delay time to scroll between the columns.",
+    "description": "Label text to define the delay between the colums scroll."
+  },
+  "labelAnimateTime": {
+    "message": "Transition animation time.",
+    "description": "Label text to defile the transition time between the colums."
+  },
+  "labelScrollSteps": {
+    "message": "Scroll to the beginning in steps.",
+    "description": "Label text to define with you want to scroll back in steps."
+  },
+  "labelInputSecond": {
+    "message": "seconds",
+    "description": "Label text to display the seconds that user can define manually."
+  }
 }

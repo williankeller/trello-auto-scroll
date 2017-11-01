@@ -8,9 +8,9 @@
   var settings = {
     // Default start definitions.
     defaults: {
-      animationTime: 800,
-      scrollStepBack: false,
-      scrollTime: 3500
+      animateTime: 1,
+      delayScroll: 3.5,
+      scrollSteps: false
     },
     // Retrieve currrent action to load page.
     action: {
@@ -63,6 +63,16 @@
   };
 
   /**
+   * Convert seconds to milliseconds.
+   *
+   * @param {Number} value
+   * @returns {Numbe}
+   */
+  var convertSeconds = function (value) {
+    return parseInt(value * 1000);
+  };
+
+  /**
    * Create a scroll animation to navegate for each column.
    *
    * @param {Object} define
@@ -73,9 +83,8 @@
     $(settings.board).animate({
       // Steps to scroll.
       scrollLeft: steps
-
         // Animation delay time.
-    }, parseInt(define.defaults.animationTime));
+    }, convertSeconds(define.defaults.animateTime));
   };
 
   /**
@@ -83,7 +92,7 @@
    *
    * @param {Object} define
    */
-  var scrollAction = function (define, action) {
+  var toScrollAction = function (define, action) {
     // Check if need to stop interval.
     if (action === 'stop') {
       // Clear current interval.
@@ -110,7 +119,7 @@
       // When all card was displayed.
       else {
         // Check if is needed to back in steps.
-        if (define.defaults.scrollStepBack) {
+        if (define.defaults.scrollSteps) {
           // Update direction to back to initial estate.
           settings.direction = 'left';
 
@@ -126,7 +135,7 @@
       scrollAnimation(define, settings.position);
 
       // Delay time between the setps.
-    }, define.defaults.scrollTime);
+    }, convertSeconds(define.defaults.delayScroll));
   };
 
   /**
@@ -147,7 +156,7 @@
       settings.defaults = storage;
 
       // Initialize the scroll action with a interval steps.
-      scrollAction(settings, action);
+      toScrollAction(settings, action);
     });
   };
 
@@ -160,7 +169,7 @@
       // Check if the scrolling actions is requested.
       if (request.message === 'scrolling') {
         // Scroll board to last column and back to the first one.
-        trelloAutoScroll();
+        trelloAutoScroll('start');
       }
       // Pause the scroll action..
       else {

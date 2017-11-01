@@ -39,13 +39,13 @@
     // Check if class is already defined to change the text.
     if ((element.classList.contains(defaults.behavior))) {
       // Set default Pause text.
-      element.innerHTML = defaults.pauseText;
+      element.textContent = defaults.pauseText;
 
       // Return behavior.
       return defaults.behavior;
     }
     // Set star text.
-    element.innerHTML = defaults.startText;
+    element.textContent = defaults.startText;
     // Kill function.
     return false;
   };
@@ -91,7 +91,7 @@
       scrollAction: action
     });
 
-    // Create a message to sent the action to content script.
+    // Create a message to send the action to content script.
     Runtime.api('tabs').query({currentWindow: true, active: true}, function (tabs) {
       var activeTab = tabs[0];
       Runtime.api('tabs').sendMessage(activeTab.id, {
