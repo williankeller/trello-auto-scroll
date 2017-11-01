@@ -4,6 +4,10 @@
 .field {
   margin-bottom: 25px;
 }
+.field label {
+  display: block;
+  position: relative;
+}
 .field-checkbox {
   margin-bottom: 20px;
   position: relative;
@@ -100,7 +104,7 @@ input[type=number] {
   border-radius: 5px;
   padding: 3px 6px;
   text-align: center;
-  width: 22px;
+  width: inherit;
 }
 input[type=number]:hover,
 input[type=number]:focus,

@@ -1,4 +1,4 @@
-(function (chrome, window, Selector, Storage, Runtime) {
+(function (document, window, Selector, Storage, Runtime) {
   'use strict';
 
   /**
@@ -6,10 +6,6 @@
    * @type Object
    */
   var defaults = {
-    // Texto to Start scroll action.
-    startText: Runtime.api('i18n').getMessage('buttonStart'),
-    // Text to Pause scroll action.
-    pauseText: Runtime.api('i18n').getMessage('buttonPause'),
     // Button element class.
     button: '.action-scroll',
     // Expected element style action.
@@ -39,15 +35,13 @@
     // Check if class is already defined to change the text.
     if ((element.classList.contains(defaults.behavior))) {
       // Set default Pause text.
-      element.textContent = defaults.pauseText;
+      element.textContent = Runtime.api('i18n').getMessage('buttonPause');
 
       // Return behavior.
       return defaults.behavior;
     }
     // Set star text.
-    element.textContent = defaults.startText;
-    // Kill function.
-    return false;
+    element.textContent = Runtime.api('i18n').getMessage('buttonStart');
   };
 
   /**
@@ -116,4 +110,4 @@
   // Set default button behavior.
   document.addEventListener('DOMContentLoaded', start);
 
-})(chrome, window, Selector, Storage, Runtime);
+})(document, window, Selector, Storage, Runtime);

@@ -4,14 +4,15 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "version": "1.5",
+  "version": "1.6",
 
   "content_scripts": [
     {
       "matches": ["https://trello.com/*"],
       "js": [
-        "src/vendor/jquery.min.js",
         "src/utils/storage.min.js",
+        "src/utils/runtime.min.js",
+        "src/vendor/jquery.min.js",
         "src/main.js"
       ],
       "run_at": "document_end"
@@ -34,8 +35,8 @@
   },
 
   "permissions": [
-    "activeTab",
     "storage",
+    "tabs",
     "http://*/*",
     "https://*/*"
   ]
