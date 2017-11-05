@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.7] - 2017-11-03
+### Changed
+- Updating jQuery version and format.
+
+
 ## [1.6] - 2017-11-01
 ### Added
 - FireFox sync storage compatibility.
@@ -74,3 +79,4 @@ All notable changes to this project will be documented in this file.
 [1.4]: https://github.com/williankeller/trello-auto-scroll/compare/v1.3...v1.4
 [1.5]: https://github.com/williankeller/trello-auto-scroll/compare/v1.4...v.1.5
 [1.6]: https://github.com/williankeller/trello-auto-scroll/compare/v.1.5...v1.6
+[1.7]: https://github.com/williankeller/trello-auto-scroll/compare/v1.6...v1.7
