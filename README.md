@@ -3,12 +3,12 @@
 [![Repository version][badge-github]][link-github] [![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla]
 
 [badge-github]: https://img.shields.io/badge/GitHub-v1.7-lightgrey.svg
-[link-github]: https://github.com/williankeller/trello-auto-scroll/tree/v1.7 "Available version on GitHub"
+[link-github]: https://github.com/williankeller/trello-auto-scroll/tree/v1.8 "Available version on GitHub"
 
 [badge-chrome]: https://img.shields.io/badge/Chrome-v1.7-blue.svg
 [link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
 
-[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.7-orange.svg
+[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.8-orange.svg
 [link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Mozilla Add-ons"
 
 _Now our extension is available on the official [Trello Integrations](https://trello.com/integrations/#/scroll) page._
