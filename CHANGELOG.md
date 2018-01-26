@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.8] - 2018-01-26
+### Changed
+- Updating jQuery version and format.
+
+
 ## [1.7] - 2017-11-03
 ### Changed
 - Updating jQuery version and format.
