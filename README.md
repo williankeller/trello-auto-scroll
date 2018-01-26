@@ -2,7 +2,7 @@
 
 [![Repository version][badge-github]][link-github] [![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla]
 
-[badge-github]: https://img.shields.io/badge/GitHub-v1.7-lightgrey.svg
+[badge-github]: https://img.shields.io/badge/GitHub-v1.8-lightgrey.svg
 [link-github]: https://github.com/williankeller/trello-auto-scroll/tree/v1.8 "Available version on GitHub"
 
 [badge-chrome]: https://img.shields.io/badge/Chrome-v1.7-blue.svg
