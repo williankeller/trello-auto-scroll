@@ -4,7 +4,7 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "version": "1.7",
+  "version": "1.8",
 
   "content_scripts": [
     {
@@ -12,7 +12,7 @@
       "js": [
         "src/utils/storage.min.js",
         "src/utils/runtime.min.js",
-        "src/vendor/jquery.min.js",
+        "src/vendor/jquery-3.3.1.min.js",
         "src/main.js"
       ],
       "run_at": "document_end"
