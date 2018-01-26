@@ -85,3 +85,4 @@ All notable changes to this project will be documented in this file.
 [1.5]: https://github.com/williankeller/trello-auto-scroll/compare/v1.4...v.1.5
 [1.6]: https://github.com/williankeller/trello-auto-scroll/compare/v.1.5...v1.6
 [1.7]: https://github.com/williankeller/trello-auto-scroll/compare/v1.6...v1.7
+[1.8]: https://github.com/williankeller/trello-auto-scroll/compare/v1.7...v1.8
