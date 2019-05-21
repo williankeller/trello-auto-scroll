@@ -1,13 +1,4 @@
-# Trello Auto Scroll [![Repository version][badge-github]][link-github] [![Chrome version][badge-chrome]][link-chrome] [![Mozilla version][badge-mozilla]][link-mozilla]
-
-[badge-github]: https://img.shields.io/badge/GitHub-v1.8-lightgrey.svg
-[link-github]: https://github.com/williankeller/trello-auto-scroll/tree/v1.7 "Available version on GitHub"
-
-[badge-chrome]: https://img.shields.io/badge/Chrome-v1.7-blue.svg
-[link-chrome]: https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk "Version published on Chrome Web Store"
-
-[badge-mozilla]: https://img.shields.io/badge/Mozilla-v1.8-orange.svg
-[link-mozilla]: https://addons.mozilla.org/addon/trello-auto-scroll/ "Version published on Mozilla Add-ons"
+# Trello Auto Scroll [![Repository version][https://img.shields.io/badge/GitHub-v1.8-lightgrey.svg]][https://github.com/williankeller/trello-auto-scroll/tree/v1.7] [![Chrome version][https://img.shields.io/badge/Chrome-v1.7-blue.svg]][https://chrome.google.com/webstore/detail/trello-auto-scroll/iheeklbhnidcdjfkonakkkbbjophomkk]
 
 _Now our extension is available on the official [Trello Integrations](https://trello.com/integrations/#/scroll) page._
 
@@ -22,7 +13,7 @@ The most interesting thing is that you are able to set the time to pause in each
 3. Go to the Options page of the extension and update the settings to best fit your screen.
 4. Open your Trello Board, click at the extension icon and just **Start auto scroll**!
 
-### Install to Mozilla
+### [DEPRECATED] Install to Mozilla
 1. Go to [Add-ons for Firefox](https://addons.mozilla.org) and search by **Trello Auto Scroll** or use [this link](https://addons.mozilla.org/en-US/firefox/addon/trello-auto-scroll/) instead.
 2. Click on **Add to Firefox** button.
 3. Go to the Options page of the extension and update the settings to best fit your screen.
